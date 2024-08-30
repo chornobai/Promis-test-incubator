@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    </head>
+<body>
+<script src="axios.js"></script>
+<script src="api.js"></script>
+<script>
+
+//    const p = new Promise((resolve ,rejected) => {
+//
+//        setTimeout(()=>{
+//           resolve()
+//        },3000)
+//    })
+//  p.then((message)=>{
+//
+//      console.log("succeed",message)
+//  }).catch((err)=>{
+//      console.log("error", err)
+//  }).finally(()=>{
+//      console.log("load")
+//  })
+
+//     Practice lesson 15
+//     const newPromise = new Promise((resolve)=>{
+//         setTimeout(()=>{
+//
+//             resolve(Math.random());
+//         }, 3000)
+//
+//
+//     })
+//
+//
+// let t = new Promise((resolve)=>{
+//
+//         newPromise.then((data)=>{
+// console.log(data)
+//         })
+//
+//
+//     resolve(newPromise)
+//
+//
+//     })
+//
+// t.then((data)=>{
+//     console.log("YEEESSSS", data)
+// })
+
+// const doAfter = (sec) => {
+//     let countPromis = new Promise((resolve,rejected ) => {
+//         setTimeout(()=> {
+//             setTimeout(()=>{
+//                 resolve()
+//             },5000)
+//
+//         }, sec)
+//     })
+//     return countPromis
+// }
+
+// const getRandomAfter = (sec) => {
+//     let countPromis = new Promise((resolve,rejected ) => {
+//         setTimeout(()=> {
+//             setTimeout(()=>{
+//                 resolve(Math.random())
+//             },5000)
+//
+//         }, sec*1000)
+//     })
+//     return countPromis
+// }
+//
+// getRandomAfter(4).then( number => console.log(`я получил ${number} спустя 4 секунды`))
+//
+// let promises = [getRandomAfter(1),getRandomAfter(2), getRandomAfter(3)];
+// let commonPromise = Promise.all(promises);
+// commonPromise.then( (data) => {
+//     console.log(data)
+//     // как вывести здесь все 3 числа?? гуглим Promise.all
+// } );
+
+
+// doAfter(5).then(()=>{console.log("resolve 5")})
+// doAfter(10).then(()=>{console.log("resolve 10")})
+// let three = doAfter(3000)
+// let five =doAfter(5000)
+// three.then(()=>{console.log("resolve 3")})
+// five.then(()=>{console.log("resolve 5 ")})
+//
+//
+// let promise3 = doAfter(3000);
+// promise3.then( () => console.log('я сработал через 3 секунд') );
+// promise3.then( () => console.log('и я тоже следом сработал через 3 секунд') );
+// promise3.then( () => console.log('и я') );
+
+// let pr = new Promise((resolve)=>{
+//     let i = 0;
+//         setInterval(()=> {
+//             i++;
+//             resolve(i)
+//         },3000)
+//
+// })
+//
+// pr.then((i)=>{
+//     console.log("RRR", i)
+// })
+//     .then((i)=>{
+//         console.log("RRR", i)
+//     })
+// let newd = doAfter(3000)
+// newd.then(()=>{
+//     return "Super"
+// }).then((name)=>{
+//     console.log(name)
+// })
+
+// let pr = new Promise( (resolve) => {
+//     let data = {
+//         cities: [{title: "Minsk"}, {title: "Kiev"}],
+//         website: "it-kamasutra.com"
+//     };
+//     resolve(data);
+// });
+//
+// pr.then( data => {
+//     console.log(data.website);
+// })
+//     .then( website => {
+//         console.log(website);
+//     })
+// api.sendStudentsCountToItKamasutra(20)
+//     .then(res => {
+//         console.log(res.data);
+//     }).then((data)=>{
+//     console.log(data.message);
+// })
+
+// let pr1 = doAfter(4); // один промис
+// let pr2 = doAfter(7); // второй промис
+//
+// pr1.then( () => console.log("pr1 resolved") ); // индивидуально подписываемся на каждый
+// pr2.then( () => console.log("pr2 resolved") );
+//
+// let aggregatedPromise = Promise.all([pr1, pr2]); // получаем общий промис
+//
+// aggregatedPromise.then( () => console.log("pr1 and pr2 resolved")); // сработает наш подписчик ТОЛЬКО когда все промисы, переданные в массиве в all будут resolved
+//
+
+// api.getVacanciesCountFromMicrosoft()
+//     .then(data => {
+//         console.log(data.data.vacancies);
+//
+//        return data.data.vacancies
+//     });
+//
+// api.getVacanciesCountFromGoogle()
+//     .then(data => {
+//         console.log(data.data.vacancies);
+//        return  data.data.vacancies
+//     });
+//
+//
+// let promises = Promise.all([api.getVacanciesCountFromMicrosoft(),api.getVacanciesCountFromGoogle()]);
+//
+//
+// promises.then((data)=> {
+//         let count = (data[0].data.vacancies + data[1].data.vacancies)
+//     console.log(count)
+//     return count
+//
+//     }
+// ).then((count)=>{
+//     api.sendStudentsCountToItKamasutra(count)
+//         .then(data => {
+//             console.log(data);
+//         });
+// })
+// //
+
+</script></body>
+</html>
